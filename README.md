@@ -17,25 +17,122 @@
 
 ## COMO TESTAR ESSE PROJETO
 
-	### GIT CLONE
+### 	GIT CLONE
 
 Escolha uma pasta no seu computador, e realize o git clone:
-[CODIGO]
+
+```
+git clone 
+```
+
+
 
 * Abra o IntelliJ IDEA, vá até FILE > OPEN
 * Escolha a pasta do clone
-* A IDE vai reconhecer o arquivo pom e vai index e baixar as dependencia, aguarde concluir
+* A IDE vai reconhecer o arquivo pom e vai index e baixar as dependência, aguarde concluir
 * Rode o projeto no Run
 * Abra seu navegador e acesso endereço localhost:9009
-[LINK CODIGO]
+
+```
+http://localhost:9009/
+```
+
+
+
+## API
+
+### ENDPOINTS
+
+#### PARTE 1:
+
+| /api/v1/edificios    |
+| -------------------- |
+| /api/v1/locadores    |
+| /api/v1/locatarios   |
+| /api/v1/apartamentos |
+| /api/v1/alugueis     |
+| /api/v1/usuarios     |
+
+- GET´s
+
+  - Ao realizar um GET sem informar parâmetro, a resposta será uma lista com todos os registros da entidade correspondente.
+
+  - Ao realizar um GET passando um parâmetro, a resposta será o registro especifico para aquele valor.
+
+  - É aceito como parâmetro o ID, do registro, composto apenas por numero.
+
+  - Exemplo de GET com parâmetro, um ID para o endpoint /api/v1/locadores:
+
+    - ```
+      localhost:9009/api/v1/locadores/1
+      ```
+
+    -  /api/v1/locadores/{id} no lugar do {id} informa o numero ID correspondente.
+
+- POST
+
+  - Ao realizar um POST, deve informar os dados no BODY, seguindo o esquema chave valor preenchendo no formato JSON
+
+  - Não é necessário informar o campo ID, esse será gerado automaticamente
+
+  - Veja em ESQUEMA o modelo de como preencher o BODY para realizar o POST
+
+  - Exemplo de BODY, para POST  no endpoint /api/v1/edificios:
+
+    - ```
+      {
+      	"descricaoEdificio": "Empresarial Toledo Center"
+      }
+      ```
+
+- PUT
+
+  - Deve ser preenchido de maneira semelhante ao POST, porém informando o campo ID
+
+  - Informe as novas informações e essas serão refletidas no ID que você informou
+
+  - Exemplo de BODY, para PUT  no endpoint /api/v1/edificios:
+
+    - ```
+      {
+          "id": 1, 
+      	"descricaoEdificio": "Avestt Center"
+      }
+      ```
+
+- DELETE
+
+  - Informe como parâmetro o ID do objeto que deseja fazer o DELETE
+
+  - Exemplo, para DELETE  no endpoint /api/v1/edificios:
+
+    - ```
+      localhost:9009/api/v1/edificios/1
+      ```
+
+
+
+#### ESQUEMA / MODELO PREENCHIMENTO BODY
+
+* POST para localhost:9009/api/v1/edificios
+
+  * ```
+    {
+    	"descricaoEdificio": "Avestt Center"
+    }
+    ```
+
+    
+
+
 
 ## ESCOPO
 
 * API
-* Cadastrar Edificios / Apartamentos / Locatarios / Aluguel
-* Visualizar apartamentos disponiveis / disponivel por edificio
-* Alugar apartamento para locatario
-* Visualizar locatario do apartamento
+* Cadastrar Edifícios / Apartamentos / Locatários / Aluguel
+* Visualizar apartamentos disponíveis / disponível por edifício
+* Alugar apartamento para locatário
+* Visualizar locatário do apartamento
 * Front Web exibindo dados do back
 * Front com form para novos cadastros
 * Front com manipulação dos dados requisitados ao back
@@ -51,7 +148,8 @@ Escolha uma pasta no seu computador, e realize o git clone:
 * JWT
 * Mais campos para entidade Apartamento (metros quadrados, bloco, numero, andar ...)
 * Mais campos para entidade Aluguel (corretora, desconto, convenio, vencimento, forma ...)
-* Mais campos para entidade Locatario (endereço faturamento, cpf/cnpj, refencia, fiador ...)
-* Adcionar validadores para evitar incremento null em campos
-* Relatorios (por periodo, por quebra, ticket medio do aluguel, ocupaçao por periodo)
+* Mais campos para entidade Locatário (endereço faturamento, cpf/cnpj, referencia, fiador ...)
+* Adicionar validadores para evitar incremento null em campos
+* Relatórios (por período, por quebra, ticket médio do aluguel, ocupação por período)
 * Diagramação, responsividade e design do front na mostra dos dados
+* Consumir API viacep para facilidade preenchimento de endereço
