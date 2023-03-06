@@ -1,5 +1,19 @@
 # AlugaAp - BIOPARK
 
+
+
+> Esse projeto foi feito para o desafio tech da BIO PARK; Tipo de prazo: CORRIDO(rsrs); O projeto tente a melhorias, algumas delas descritas no final desse README, afim de entregar no tempo estipulado essas e possivelmente outros foram cortadas, mas podem ser adicionadas de maneira posterior, afim de melhorar o projeto no futuro, mesmo que não participando do desafio. Escolhi inicialmente trabalhar de maneira mais objetiva, afim de ter um projeto que cumpra o escopo.
+
+Nesse projeto será possivel ver:
+
+* Persistência de dados em banco relacional;
+* Padrão de projeto;
+* Manipulação de dados requisitados ao banco de dados, sem os persistir;
+* Entrega e recebimento JSON;
+* Pagina WEB exibindo dados do BACK;
+* JS consumindo dados da API BACK;
+* Boas praticas JAVA e SPRING.
+
 ## UTILIZADO NO PROJETO
 
 * Java 11
@@ -13,7 +27,8 @@
 
 * Esse projeto foi testado, realizando o git clone e abrindo o projeto no IntelliJ IDEA;
 * Testado em ambiente Windows 11 pro, com java 11 e postgre 12 instalado;
-* Testado em ambiente Linux Mint 21.1, com openJDK 19 e postgreSQL 14 instalado.
+* Testado em ambiente Linux Mint 21.1, com openJDK 19 e postgreSQL 14 instalado;
+* Em ambos os ambientes foram utilizados os POSTMAN e INSOMNIA.
 
 ## COMO TESTAR ESSE PROJETO
 
@@ -22,7 +37,7 @@
 Escolha uma pasta no seu computador, e realize o git clone:
 
 ```
-git clone 
+git clone https://github.com/diogoregis/alugaapbiopark.git
 ```
 
 
@@ -36,6 +51,8 @@ git clone
 ```
 http://localhost:9009/
 ```
+
+Uma maneira alternativa é entrar na pasta do projeto, RESOURCES > TEMPLATE e abrir o arquivo index.html
 
 
 
@@ -176,6 +193,52 @@ http://localhost:9009/
 | /api/v1/dashboard/contratos/edificio  |
 | /api/v1/dashboard/contratos/locatario |
 
+####	Como utilizar:
+
+| ACESSO                                | GET                                                          | PARAMETRO {ID}                                               |
+| ------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| /api/v1/dashboard                     | Retorna todos apartamentos disponíveis para aluguel.         | Ao informar o ID do edifício como parâmetro, retorna todos apartamentos disponíveis para aluguel no edifício especificado no paramento. |
+| /api/v1/dashboard/ocupados            | Retorna todos apartamentos já ocupados, não disponíveis para aluguel. | Ao informar o ID do edifício como parâmetro, retorna todos apartamentos já ocupados, não disponíveis para aluguel no edifício especificado no paramento. |
+| /api/v1/dashboard/contratos           | Retorna a quantidade total de Contratos ativos, e o valor total dos alugueis que esses contratos representam (em R$). | N/A                                                          |
+| /api/v1/dashboard/ocupados/locatario  | Retorna todos locatários, com quantidade de contratos e valor total pago por eles no aluguel (em R$) | Ao informar o ID do locatário como parâmetro, será retornado a quantidade de contratos e valor total pago no aluguel (em R$) |
+| /api/v1/dashboard/contratos/edificio  | N/A                                                          | Ao informar o ID referente ao edifício, será retornado todos os contratos ativos para o edifício especifico |
+| /api/v1/dashboard/contratos/locatario | N/A                                                          | Ao informar o ID referente ao locatário, será retornado todos os contratos ativos para o locatário especifico |
+
+* Estes por sua vez só aceitam requisição GET
+* Utilize o prefixo localhost:9009
+
+#### Exemplo
+
+* Retorno do GET para: /api/v1/dashboard/contratos
+
+  * ```
+    {
+        "quantidadeTotalContratos": 3,
+        "valorTotalContratos": 4500.0
+    }
+    ```
+
+
+
+## ACESSANDO NO NAVEGADOR
+
+Acesse no seu navegador:
+
+```
+localhost:9009
+```
+
+De maneira alternativa procure e abra o arquivo: index.html, dentro da pasta do projeto.
+
+
+
+Será possível por meio da pagina:
+
+* Listar todos Locatários
+* Listar todos edifícios
+* Listar todos alugueis
+* Alugar um apartamento para um locatário.
+
 
 
 ## ESCOPO
@@ -205,3 +268,4 @@ http://localhost:9009/
 * Relatórios (por período, por quebra, ticket médio do aluguel, ocupação por período)
 * Diagramação, responsividade e design do front na mostra dos dados
 * Consumir API viacep para facilidade preenchimento de endereço
+* Tratamento e criação de Exception´s personalizadas.
