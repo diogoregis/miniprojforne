@@ -182,6 +182,10 @@ Uma maneira alternativa é entrar na pasta do projeto, RESOURCES > TEMPLATE e ab
 
 
 
+Existe alguns recursos, como no DELETE do ALUGUEL, foram tomados alguns cuidados, como não excluir o registro, sendo assim, quando você faz o DELETE de um ALUGUEL, o mesmo o mesmo é marcado como não mais ativo e o APARTAMENTO é devolvido para a condição de DISPONIVEL para ALUGUEL, tornando possível outro LOCATARIO locar o APARTAMENTO, sem excluir o registro, e mantendo um histórico persistido no banco de dados.
+
+
+
 #### PARTE 2:
 
 | ENDPOINTS                             |
