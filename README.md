@@ -2,7 +2,7 @@
 
 
 
-> Esse projeto foi feito para o desafio tech da BIO PARK; Tipo de prazo: CORRIDO(rsrs); O projeto tente a melhorias, algumas delas descritas no final desse README, afim de entregar no tempo estipulado essas e possivelmente outros foram cortadas, mas podem ser adicionadas de maneira posterior, afim de melhorar o projeto no futuro, mesmo que não participando do desafio. Escolhi inicialmente trabalhar de maneira mais objetiva, afim de ter um projeto que cumpra o escopo.
+> Esse projeto foi feito para o desafio tech da BIO PARK; Tipo de prazo: CORRIDO(rsrs); O projeto tende a melhorias, algumas delas descritas no final desse README, afim de entregar no tempo estipulado essas e possivelmente outros foram cortadas, mas podem ser adicionadas de maneira posterior, afim de melhorar o projeto no futuro, mesmo que não participando do desafio. Escolhi inicialmente trabalhar de maneira mais objetiva, afim de ter um projeto que cumpra o escopo.
 
 Nesse projeto será possivel ver:
 
