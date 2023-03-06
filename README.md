@@ -165,6 +165,17 @@ http://localhost:9009/
 
 
 
+#### PARTE 2:
+
+| ENDPOINTS                             |
+| ------------------------------------- |
+| /api/v1/dashboard                     |
+| /api/v1/dashboard/ocupados            |
+| /api/v1/dashboard/ocupados/locatario  |
+| /api/v1/dashboard/contratos           |
+| /api/v1/dashboard/contratos/edificio  |
+| /api/v1/dashboard/contratos/locatario |
+
 
 
 ## ESCOPO
