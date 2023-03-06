@@ -118,11 +118,52 @@ http://localhost:9009/
 
   * ```
     {
-    	"descricaoEdificio": "Avestt Center"
+    	"descricaoEdificio": "Nome do EDIFICIO"
     }
     ```
 
-    
+* POST para localhost:9009/api/v1/locadores
+
+  * ```
+    {
+        "nomeLocador": "Nome do LOCADOR"
+    }
+    ```
+
+* POST para localhost:9009/api/v1/locatarios
+
+  * ```
+    {
+    	"nomeLocatario": "Nome do LOCATARIO"
+    }
+    ```
+
+* POST para localhost:9009/api/v1/apartamentos
+
+  * ```
+    {
+    	"edificio": {"id": 3 },
+    	"locador": {"id": 1 }
+    }
+    ```
+
+  * Em ID informe o código referente ao EDIFICIO e LOCADOR que vai pertencer o APARTAMENTO.
+
+* POST para localhost:9009/api/v1/alugueis
+
+  * ```
+    {
+    	"apartamento": {"id": 7 },
+    	"locatario": {"id": 3 },
+    	"valorAluguel": 1500.00
+    }
+    ```
+
+  * Em ID informe o código correspondente ao APARTAMENTO que deseja alugar, e o LOCATARIO que vai alugar o APARTAMENTO;
+
+  * No valor do campo "valorAluguel"  informe o preço pago pelo aluguel.
+
+
 
 
 
